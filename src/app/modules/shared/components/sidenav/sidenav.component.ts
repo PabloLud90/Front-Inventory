@@ -13,7 +13,7 @@ export class SidenavComponent {
 
   menuNav = [
     {name: "Home", router: "home", icon: "home"},
-    {name: "Categorias", router: "home", icon: "category"},
+    {name: "Categorias", router: "category", icon: "category"},
     {name: "Productos", router: "home", icon: "production_quantity_limits"}
 
  

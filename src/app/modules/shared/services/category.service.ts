@@ -31,10 +31,15 @@ export class CategoryService {
   saveCategory(body: any){
     const endpoint =`${base_url}/categories`;
     return this.http.post(endpoint, body);
-
   }
 
-
+  /**
+   * Actualizar
+   */
+  updateCategory(body:any, id:any){
+    const endpoint = `${base_url}/categories/ ${id}`;
+    return this.http.put(endpoint, body)
+  }
 
   //** Obtiene todas las categorias por ID**/
   getCategoryById(){

@@ -13,7 +13,7 @@
         <div class="right">
             <ul>
                 <li>
-                    <button mat-raised-button color="primary">Agregar Categoría</button>
+                    <button mat-raised-button color="primary" (click)="openCategoryDialog()">Agregar Categoría</button>
                 </li>
             </ul>
         </div>
@@ -26,26 +26,20 @@
             <ng-container matColumnDef="id">
                 <th mat-header-cell *matHeaderCellDef> Nro </th>
                 <td mat-cell *matCellDef="let element"> {{ element.id }} </td>
-                <td mat-cell> 1 </td>
-
             </ng-container>
 
             <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef> Name </th>
-                <td mat-cell *matCellDef="let element"> {{ element.name }} </td>
-                <td> Zapatos </td>
-
+                <th mat-header-cell *matHeaderCellDef> Nombre </th>
+                <td mat-cell *matCellDef="let element"> {{ element.nombre }} </td>
             </ng-container>
 
             <ng-container matColumnDef="description">
-                <th mat-header-cell *matHeaderCellDef> Description </th>
-                <td mat-cell *matCellDef="let element"> {{element.description}} </td>
-                <td mat-cell> lo mejor en cuero </td>
-
+                <th mat-header-cell *matHeaderCellDef> Descripción </th>
+                <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
             </ng-container>
 
             <ng-container matColumnDef="actions">
-                <th mat-header-cell *matHeaderCellDef> Acciones </th>
+                <th mat-header-cell *matHeaderCellDef> Acción </th>
                 <td mat-cell *matCellDef="let element; let i= index;"> 
                     <button mat-icon-button color="accent"> <mat-icon aria-label="Edit"> edit </mat-icon></button>
                     <button mat-icon-button color="accent"> <mat-icon aria-label="Delete"> delete </mat-icon></button>

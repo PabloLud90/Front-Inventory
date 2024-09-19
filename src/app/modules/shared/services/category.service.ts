@@ -38,7 +38,15 @@ export class CategoryService {
    */
   updateCategory(body:any, id:any){
     const endpoint = `${base_url}/categories/ ${id}`;
-    return this.http.put(endpoint, body)
+    return this.http.put(endpoint, body);
+  }
+
+  /**
+   * Actualizar
+   */
+  deleteCategory(id:any){
+    const endpoint = `${base_url}/categories/ ${id}`;
+    return this.http.delete(endpoint);
   }
 
   //** Obtiene todas las categorias por ID**/

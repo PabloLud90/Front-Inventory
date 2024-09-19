@@ -93,7 +93,7 @@ export class CategoryComponent implements OnInit {
 
   delete(id:any){
     const dialogRef = this.dialog.open(ConfirmComponent, {
-      data:{id: id}, width: '450px'
+      data:{id: id}, width: '400px', height: '200px'
     });
 
     dialogRef.afterClosed().subscribe((result:any) => {
@@ -105,6 +105,18 @@ export class CategoryComponent implements OnInit {
         this.getCategories();
       }
     });
+  }
+
+  buscarCategory(termino:string){
+    if(termino.length === 0){
+      return this.getCategories();
+    }
+
+    this.categoryService.getCategoryById(termino)
+        .subscribe((resp:any) => {
+          console.log('----->', resp);
+          this.processCategoriesResponse(resp);
+        })
   }
 
 

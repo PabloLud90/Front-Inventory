@@ -50,8 +50,9 @@ export class CategoryService {
   }
 
   //** Obtiene todas las categorias por ID**/
-  getCategoryById(){
-
+  getCategoryById(id:any){
+    const endpoint = `${base_url}/categories/ ${id}`;
+    return this.http.get(endpoint);
   }
 
 }
